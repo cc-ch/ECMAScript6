@@ -17,4 +17,4 @@ branches:
       - dev 
 env:
     global:
-      - GH_REF: github.com/cc-ch/ECMAScript6
+      - GH_REF: github.com/cc-ch/ECMAScript6.git
