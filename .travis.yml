@@ -4,10 +4,10 @@ install:
   - npm install 
 script:
   - npm run build
-after_script:
+after_script:git
   - cd ./dist
   - git init
-  - git config user.name "chencc"
+  - git config user.name "chenhan"
   - git config user.email "932322877@qq.com"
   - git add .
   - git commit -m "Travis CI Auto Update"
