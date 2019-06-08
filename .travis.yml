@@ -1,20 +1,29 @@
 language: node_js
 node_js: stable 
+
+cache:
+  directories:
+    - node_modules
+
+branches:
+    only:
+      - dev 
+      
 install:
   - npm install 
+
 script:
   - npm run build
-after_script:git
+  
+after_script:
    - cd ./dist
    - git init
    - git config user.name "chenhan"
    - git config user.email "932322877@qq.com"
    - git add .
-   - git commit -m "Travis CI Auto Update webs"
+   - git commit -m "Travis CI Auto Update"
    - git push --force --quiet "https://${Travis_Token}@${GH_REF}" master:master
-branches:
-    only:
-      - dev 
+
 env:
     global:
       - GH_REF: github.com/cc-ch/ECMAScript6.git
